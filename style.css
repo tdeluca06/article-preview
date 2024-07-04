@@ -1,0 +1,125 @@
+/*CSS Reset*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* responsive pictures */
+img,
+picture {
+    display: block;
+    max-width: 100%;
+}
+/* to make it easier to work in percentages */
+html,
+body{
+    height: 100%;
+}
+
+button,
+select {
+    font-family: inherit;
+}
+/* to prevent text overflow - prevent horizontal scrolling */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+:root {
+    --clr-yellow: hsl(47, 88%, 63%);
+    --clr-grey: hsl(0, 0%, 50%);
+    --clr-black: hsl(0, 0%, 7%);
+
+    --ff-figtree: 'Figtree';
+
+    --fw-normal: 500;
+    --fw-bold: 800;
+}
+
+body {
+    background-color: var(--clr-yellow);
+    font-family: var(--ff-figtree);
+    font-weight: var(--fw-normal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.card {
+    --content-spacing: 1rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 1rem;
+    border: 2px solid var(--clr-black);
+    max-width: 340px;
+    position: relative;
+}
+
+.card::before {
+    content: ''; /* psuedo element for shadow effect*/
+    position: absolute;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    z-index: -1;
+    left: 8px;
+    top: 8px;
+}
+
+.card__img {
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+}
+
+.card__category {
+    font-weight: var(--fw-bold);
+    background-color: var(--clr-yellow);
+    padding-top: 0.35rem;
+    padding-right: 0.6rem;
+    padding-bottom: 0.35rem;
+    padding-left: 0.6rem;
+    border-radius: 0.25rem;
+}
+
+.card__date {
+    margin-top: var(--content-spacing);
+    font-size: 0.875rem;
+    margin-bottom: var(--content-spacing);
+}
+
+.card__header {
+    font-size: 1.25rem;
+    font-weight: var(--fw-bold);
+    margin-bottom: var(--content-spacing);
+}
+
+.card__description {
+    color: var(--clr-grey);
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+}
+
+.flex-group {
+    display: flex;
+}
+
+.flex-group img{
+    height: 10%;
+    width: 10%
+}
+
+.card__author {
+    font-weight: var(--fw-bold);
+    margin-left: 0.65rem;
+    font-size: 14px;
+    margin-top: 0.35rem;
+}
